@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Character Counter – Count Characters, Words & Lines | DailyTools Hub</title>
+<meta name="description" content="Free online character counter — instantly count total characters, characters without spaces, words and lines in any text." />
+<link rel="canonical" href="https://dailytoolshub.com/tools/character-counter.html" />
+<link rel="icon" href="../favicon.ico" />
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../all-tools.html#categories">Categories</a><a href="../about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="icon-btn hamburger" id="hamburger-btn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+  <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+</nav>
+
+<main>
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="../all-tools.html">All Tools</a> / Character Counter</p>
+    <div class="tool-header">
+      <h1>Character Counter</h1>
+      <p class="desc">Count characters, words and lines instantly — handy for social post limits, bios and form fields.</p>
+    </div>
+
+    <div class="tool-layout" style="max-width:820px">
+      <div class="panel">
+        <h2>Your text</h2>
+        <div class="field">
+          <textarea id="text-input" placeholder="Type or paste your text here..." style="min-height:200px"></textarea>
+        </div>
+        <div class="result-grid" style="margin-top:16px">
+          <div class="result-stat"><div class="value" id="stat-chars">0</div><div class="label">Total Characters</div></div>
+          <div class="result-stat"><div class="value" id="stat-chars-nospace">0</div><div class="label">Chars (no spaces)</div></div>
+          <div class="result-stat"><div class="value" id="stat-words">0</div><div class="label">Words</div></div>
+          <div class="result-stat"><div class="value" id="stat-lines">0</div><div class="label">Lines</div></div>
+        </div>
+        <div class="action-row">
+          <button class="btn btn-secondary" id="clear-btn">Clear Text</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>What is this tool?</h2>
+      <p>The Character Counter gives an instant, live count of characters (with and without spaces), words, and lines in any block of text — useful when writing to a strict character limit, like a tweet, meta description, or bio.</p>
+      <h2>How to use it</h2>
+      <ol>
+        <li>Type or paste your text into the box.</li>
+        <li>Watch the counts update live as you type.</li>
+      </ol>
+      <h2>Example</h2>
+      <p>A typical tweet-length message of 280 characters will show a word count around 45-55 words, depending on average word length.</p>
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item open">
+        <div class="faq-q">Does the character count include spaces? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">"Total Characters" includes spaces; "Chars (no spaces)" excludes them, so you can check both depending on the limit you're working with.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How are lines counted? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Each line break (pressing Enter) counts as a new line, including empty lines.</div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>You May Also Need</h2>
+      <div class="related-grid" id="related-tools-grid"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+        <p class="desc">Simple tools for everyday life. Free, fast, and privacy-friendly — no account needed.</p>
+      </div>
+      <div class="footer-col"><h4>Explore</h4><a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Legal</h4><a href="../privacy-policy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a><a href="../disclaimer.html">Disclaimer</a></div>
+      <div class="footer-col"><h4>Popular</h4><a href="word-counter.html">Word Counter</a><a href="password-generator.html">Password Generator</a><a href="qr-generator.html">QR Generator</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 DailyTools Hub. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script>window.DTH_TOOL_ID = "character-counter";</script>
+<script src="../js/tools.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderRelatedTools(["word-counter", "password-generator", "qr-generator"]);
+
+    const textEl = document.getElementById("text-input");
+
+    function update() {
+      const text = textEl.value;
+      const trimmed = text.trim();
+      const words = trimmed ? trimmed.split(/\s+/).length : 0;
+      const lines = text ? text.split("\n").length : 0;
+
+      document.getElementById("stat-chars").textContent = text.length.toLocaleString("en-IN");
+      document.getElementById("stat-chars-nospace").textContent = text.replace(/\s/g, "").length.toLocaleString("en-IN");
+      document.getElementById("stat-words").textContent = words.toLocaleString("en-IN");
+      document.getElementById("stat-lines").textContent = lines.toLocaleString("en-IN");
+    }
+
+    textEl.addEventListener("input", update);
+    document.getElementById("clear-btn").addEventListener("click", () => {
+      textEl.value = "";
+      update();
+    });
+    update();
+  });
+</script>
+</body>
+</html>

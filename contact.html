@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact Us – DailyTools Hub</title>
+<meta name="description" content="Get in touch with the DailyTools Hub team — report a bug, suggest a new tool, or ask a question." />
+<link rel="canonical" href="https://dailytoolshub.com/contact.html" />
+<link rel="icon" href="favicon.ico" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="all-tools.html">All Tools</a>
+      <a href="all-tools.html#categories">Categories</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="icon-btn hamburger" id="hamburger-btn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+  <a href="index.html">Home</a>
+  <a href="all-tools.html">All Tools</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p class="lead">Found a bug? Want a tool that doesn't exist yet? Tell us.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-card">
+        <form id="contact-form">
+          <div class="field">
+            <label for="c-name">Your name</label>
+            <input type="text" id="c-name" required placeholder="e.g. Priya Sharma" />
+          </div>
+          <div class="field">
+            <label for="c-email">Email address</label>
+            <input type="text" id="c-email" required placeholder="you@example.com" />
+          </div>
+          <div class="field">
+            <label for="c-message">Message</label>
+            <textarea id="c-message" required placeholder="Tell us what's on your mind..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+          <p class="hint" style="margin-top:12px">
+            This demo form doesn't send email yet — connect it to a form service (e.g. Formspree) or a small Flask endpoint when you deploy. See the setup guide for details.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+        <p class="desc">Simple tools for everyday life. Free, fast, and privacy-friendly — no account needed.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="all-tools.html">All Tools</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </div>
+      <div class="footer-col">
+        <h4>Popular</h4>
+        <a href="tools/age-calculator.html">Age Calculator</a>
+        <a href="tools/emi-calculator.html">EMI Calculator</a>
+        <a href="tools/qr-generator.html">QR Generator</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 DailyTools Hub. All rights reserved.</span></div>
+  </div>
+</footer>
+<script src="js/tools.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    showToast("Thanks! (Wire this form up to a backend to actually receive messages.)");
+    this.reset();
+  });
+</script>
+</body>
+</html>

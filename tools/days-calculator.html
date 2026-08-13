@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Days Calculator – Days Between, Until & Since | DailyTools Hub</title>
+<meta name="description" content="Calculate the number of days between two dates, days remaining until a future date, or days since a past date." />
+<link rel="canonical" href="https://dailytoolshub.com/tools/days-calculator.html" />
+<link rel="icon" href="../favicon.ico" />
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../all-tools.html#categories">Categories</a><a href="../about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="icon-btn hamburger" id="hamburger-btn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+  <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+</nav>
+
+<main>
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="../all-tools.html">All Tools</a> / Days Calculator</p>
+    <div class="tool-header">
+      <h1>Days Calculator</h1>
+      <p class="desc">Count the days between two dates, or find how many days remain until — or have passed since — a date.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="panel">
+        <h2>Choose a mode</h2>
+        <div class="field">
+          <label for="mode">What do you want to calculate?</label>
+          <select id="mode">
+            <option value="between">Days between two dates</option>
+            <option value="until">Days until a future date</option>
+            <option value="since">Days since a past date</option>
+          </select>
+        </div>
+
+        <div id="between-fields">
+          <div class="field-row">
+            <div class="field">
+              <label for="start-date">Start date</label>
+              <input type="date" id="start-date" />
+              <div class="error-msg">Please enter a valid date.</div>
+            </div>
+            <div class="field">
+              <label for="end-date">End date</label>
+              <input type="date" id="end-date" />
+              <div class="error-msg">Please enter a valid date.</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="single-fields" style="display:none">
+          <div class="field">
+            <label for="target-date">Target date</label>
+            <input type="date" id="target-date" />
+            <div class="error-msg">Please enter a valid date.</div>
+          </div>
+        </div>
+
+        <div class="action-row">
+          <button class="btn btn-primary" id="calc-btn">Calculate</button>
+          <button class="btn btn-secondary" id="reset-btn">Reset</button>
+        </div>
+      </div>
+
+      <div class="panel result-panel" id="result-panel">
+        <h2>Result</h2>
+        <div class="result-hero">
+          <div class="value" id="res-headline">—</div>
+          <div class="label" id="res-label">Days</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>What is this tool?</h2>
+      <p>The Days Calculator answers three common questions: how many days lie between two dates, how many days remain until an upcoming date, and how many days have passed since a past date — useful for deadlines, countdowns, and anniversaries.</p>
+      <h2>How to use it</h2>
+      <ol>
+        <li>Choose the mode that matches your question.</li>
+        <li>Enter the required date(s).</li>
+        <li>Click "Calculate" to see the day count.</li>
+      </ol>
+      <h2>Example</h2>
+      <p>If today is 13 August 2026 and your target date is 25 December 2026, "Days until a future date" shows how many days remain until Christmas.</p>
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item open">
+        <div class="faq-q">What's the difference between this and the Date Calculator? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">This tool focuses purely on day counts (between dates, or from today). The Date Calculator additionally breaks results into years/months/days and can add or subtract days from a date.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Does "days until" count today? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">No — it shows the number of full days between today and the target date, so the count is 0 if the target date is today.</div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>You May Also Need</h2>
+      <div class="related-grid" id="related-tools-grid"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+        <p class="desc">Simple tools for everyday life. Free, fast, and privacy-friendly — no account needed.</p>
+      </div>
+      <div class="footer-col"><h4>Explore</h4><a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Legal</h4><a href="../privacy-policy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a><a href="../disclaimer.html">Disclaimer</a></div>
+      <div class="footer-col"><h4>Popular</h4><a href="date-calculator.html">Date Calculator</a><a href="age-calculator.html">Age Calculator</a><a href="qr-generator.html">QR Generator</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 DailyTools Hub. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script>window.DTH_TOOL_ID = "days-calculator";</script>
+<script src="../js/tools.js"></script>
+<script src="../js/calculators.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderRelatedTools(["date-calculator", "age-calculator", "percentage-calculator"]);
+
+    const modeEl = document.getElementById("mode");
+    const betweenFields = document.getElementById("between-fields");
+    const singleFields = document.getElementById("single-fields");
+    const resultPanel = document.getElementById("result-panel");
+
+    modeEl.addEventListener("change", () => {
+      const isBetween = modeEl.value === "between";
+      betweenFields.style.display = isBetween ? "" : "none";
+      singleFields.style.display = isBetween ? "none" : "";
+      resultPanel.classList.remove("show");
+    });
+
+    document.getElementById("calc-btn").addEventListener("click", () => {
+      if (modeEl.value === "between") {
+        const startEl = document.getElementById("start-date");
+        const endEl = document.getElementById("end-date");
+        startEl.closest(".field").classList.toggle("has-error", !startEl.value);
+        endEl.closest(".field").classList.toggle("has-error", !endEl.value);
+        if (!startEl.value || !endEl.value) return;
+        const days = calcDaysBetween(startEl.value, endEl.value);
+        if (days === null) return;
+        document.getElementById("res-headline").textContent = Math.abs(days).toLocaleString("en-IN");
+        document.getElementById("res-label").textContent = "Days Between";
+      } else {
+        const targetEl = document.getElementById("target-date");
+        targetEl.closest(".field").classList.toggle("has-error", !targetEl.value);
+        if (!targetEl.value) return;
+        const diff = calcDaysFromToday(targetEl.value);
+        if (diff === null) return;
+        if (modeEl.value === "until") {
+          document.getElementById("res-headline").textContent = diff >= 0 ? diff.toLocaleString("en-IN") : "0";
+          document.getElementById("res-label").textContent = diff >= 0 ? "Days Until Target Date" : "This date has already passed";
+        } else {
+          const since = -diff;
+          document.getElementById("res-headline").textContent = since >= 0 ? since.toLocaleString("en-IN") : "0";
+          document.getElementById("res-label").textContent = since >= 0 ? "Days Since Target Date" : "This date is in the future";
+        }
+      }
+      resultPanel.classList.add("show", "fade-in");
+    });
+
+    document.getElementById("reset-btn").addEventListener("click", () => {
+      ["start-date", "end-date", "target-date"].forEach((id) => {
+        const el = document.getElementById(id);
+        el.value = "";
+        el.closest(".field").classList.remove("has-error");
+      });
+      resultPanel.classList.remove("show");
+    });
+  });
+</script>
+</body>
+</html>

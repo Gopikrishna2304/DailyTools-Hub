@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EMI Calculator – Calculate Monthly Loan EMI | DailyTools Hub</title>
+<meta name="description" content="Calculate your monthly EMI, total interest and total payment for any loan amount, interest rate and tenure with our free EMI calculator." />
+<link rel="canonical" href="https://dailytoolshub.com/tools/emi-calculator.html" />
+<meta property="og:title" content="EMI Calculator – DailyTools Hub" />
+<meta property="og:description" content="Calculate your monthly loan EMI, total interest and total payment instantly." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="../favicon.ico" />
+<link rel="stylesheet" href="../css/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is EMI?", "acceptedAnswer": {"@type": "Answer", "text": "EMI stands for Equated Monthly Installment — a fixed payment made every month toward repaying a loan, covering both principal and interest."}},
+    {"@type": "Question", "name": "How is EMI calculated?", "acceptedAnswer": {"@type": "Answer", "text": "EMI is calculated using the loan amount, the monthly interest rate, and the number of monthly installments, using the standard reducing-balance EMI formula."}}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../all-tools.html#categories">Categories</a><a href="../about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="icon-btn hamburger" id="hamburger-btn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+  <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+</nav>
+
+<main>
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="../all-tools.html">All Tools</a> / EMI Calculator</p>
+
+    <div class="tool-header">
+      <h1>EMI Calculator</h1>
+      <p class="desc">Calculate your monthly loan payment (EMI), total interest, and total amount payable — for home loans, car loans, or personal loans.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="panel">
+        <h2>Loan details</h2>
+        <div class="field">
+          <label for="principal">Loan amount (₹)</label>
+          <input type="number" id="principal" placeholder="e.g. 500000" min="0" />
+          <div class="error-msg">Please enter a valid loan amount.</div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="rate">Interest rate (% per year)</label>
+            <input type="number" id="rate" placeholder="e.g. 8.5" min="0" step="0.01" />
+            <div class="error-msg">Please enter a valid interest rate.</div>
+          </div>
+          <div class="field">
+            <label for="tenure">Tenure (months)</label>
+            <input type="number" id="tenure" placeholder="e.g. 60" min="1" step="1" />
+            <div class="error-msg">Please enter a valid tenure.</div>
+          </div>
+        </div>
+        <div class="action-row">
+          <button class="btn btn-primary" id="calc-btn">Calculate EMI</button>
+          <button class="btn btn-secondary" id="reset-btn">Reset</button>
+        </div>
+      </div>
+
+      <div class="panel result-panel" id="result-panel">
+        <h2>Your EMI breakdown</h2>
+        <div class="result-hero">
+          <div class="value" id="res-emi">—</div>
+          <div class="label">Monthly EMI</div>
+        </div>
+        <div class="result-grid">
+          <div class="result-stat"><div class="value" id="res-principal">—</div><div class="label">Principal</div></div>
+          <div class="result-stat"><div class="value" id="res-interest">—</div><div class="label">Total Interest</div></div>
+          <div class="result-stat"><div class="value" id="res-total">—</div><div class="label">Total Payment</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>What is this tool?</h2>
+      <p>The EMI Calculator computes your fixed monthly repayment amount for a loan, based on the principal, annual interest rate, and repayment tenure — using the standard reducing-balance formula banks use.</p>
+
+      <h2>How to use it</h2>
+      <ol>
+        <li>Enter the total loan amount you plan to borrow.</li>
+        <li>Enter the annual interest rate offered by your lender.</li>
+        <li>Enter the loan tenure in months (e.g. 5 years = 60 months).</li>
+        <li>Click "Calculate EMI" to see your monthly payment, total interest, and total amount payable.</li>
+      </ol>
+
+      <h2>Example</h2>
+      <p>For a loan of ₹5,00,000 at 8.5% annual interest over 60 months, the calculator shows the fixed monthly EMI along with how much of the total payment goes toward interest versus principal.</p>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item open">
+        <div class="faq-q">What is EMI? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">EMI stands for Equated Monthly Installment — a fixed payment made every month toward repaying a loan, covering both principal and interest.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How is EMI calculated? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">EMI is calculated using the loan amount, the monthly interest rate, and the number of monthly installments, using the standard reducing-balance EMI formula.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Does this account for processing fees or prepayment charges? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">No — this is a straightforward EMI estimate based on principal, rate and tenure only. Always check your loan agreement for fees, insurance, and prepayment terms with your lender.</div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>You May Also Need</h2>
+      <div class="related-grid" id="related-tools-grid"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+        <p class="desc">Simple tools for everyday life. Free, fast, and privacy-friendly — no account needed.</p>
+      </div>
+      <div class="footer-col"><h4>Explore</h4><a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Legal</h4><a href="../privacy-policy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a><a href="../disclaimer.html">Disclaimer</a></div>
+      <div class="footer-col"><h4>Popular</h4><a href="age-calculator.html">Age Calculator</a><a href="gst-calculator.html">GST Calculator</a><a href="qr-generator.html">QR Generator</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 DailyTools Hub. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script>window.DTH_TOOL_ID = "emi-calculator";</script>
+<script src="../js/tools.js"></script>
+<script src="../js/calculators.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderRelatedTools(["gst-calculator", "salary-calculator", "percentage-calculator"]);
+
+    const principalEl = document.getElementById("principal");
+    const rateEl = document.getElementById("rate");
+    const tenureEl = document.getElementById("tenure");
+    const resultPanel = document.getElementById("result-panel");
+
+    function validateField(el, isValid) {
+      const field = el.closest(".field");
+      field.classList.toggle("has-error", !isValid);
+      return isValid;
+    }
+
+    document.getElementById("calc-btn").addEventListener("click", () => {
+      const principal = parseFloat(principalEl.value);
+      const rate = parseFloat(rateEl.value);
+      const tenure = parseInt(tenureEl.value, 10);
+
+      const okP = validateField(principalEl, !isNaN(principal) && principal > 0);
+      const okR = validateField(rateEl, !isNaN(rate) && rate >= 0);
+      const okT = validateField(tenureEl, !isNaN(tenure) && tenure > 0);
+      if (!okP || !okR || !okT) return;
+
+      const result = calcEMI(principal, rate, tenure);
+      if (!result) return;
+
+      document.getElementById("res-emi").textContent = formatCurrency(result.emi);
+      document.getElementById("res-principal").textContent = formatCurrency(result.principal);
+      document.getElementById("res-interest").textContent = formatCurrency(result.totalInterest);
+      document.getElementById("res-total").textContent = formatCurrency(result.totalPayment);
+      resultPanel.classList.add("show", "fade-in");
+    });
+
+    document.getElementById("reset-btn").addEventListener("click", () => {
+      principalEl.value = "";
+      rateEl.value = "";
+      tenureEl.value = "";
+      [principalEl, rateEl, tenureEl].forEach((el) => el.closest(".field").classList.remove("has-error"));
+      resultPanel.classList.remove("show");
+    });
+  });
+</script>
+</body>
+</html>

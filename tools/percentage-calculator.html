@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Percentage Calculator – Free Online Percentage Tool | DailyTools Hub</title>
+<meta name="description" content="Calculate what X% of Y is, what percentage X is of Y, or the percentage increase/decrease between two numbers." />
+<link rel="canonical" href="https://dailytoolshub.com/tools/percentage-calculator.html" />
+<link rel="icon" href="../favicon.ico" />
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../all-tools.html#categories">Categories</a><a href="../about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="icon-btn hamburger" id="hamburger-btn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+  <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+</nav>
+
+<main>
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="../all-tools.html">All Tools</a> / Percentage Calculator</p>
+    <div class="tool-header">
+      <h1>Percentage Calculator</h1>
+      <p class="desc">Four common percentage calculations in one place — no formulas to remember.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="panel">
+        <h2>Choose a calculation</h2>
+        <div class="field">
+          <label for="mode">What do you want to calculate?</label>
+          <select id="mode">
+            <option value="of">What is X% of Y?</option>
+            <option value="what">X is what percentage of Y?</option>
+            <option value="increase">Percentage increase from X to Y</option>
+            <option value="decrease">Percentage decrease from X to Y</option>
+          </select>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label id="label-x" for="val-x">X</label>
+            <input type="number" id="val-x" placeholder="e.g. 20" />
+            <div class="error-msg">Please enter a valid number.</div>
+          </div>
+          <div class="field">
+            <label id="label-y" for="val-y">Y</label>
+            <input type="number" id="val-y" placeholder="e.g. 250" />
+            <div class="error-msg">Please enter a valid number.</div>
+          </div>
+        </div>
+        <div class="action-row">
+          <button class="btn btn-primary" id="calc-btn">Calculate</button>
+          <button class="btn btn-secondary" id="reset-btn">Reset</button>
+        </div>
+      </div>
+
+      <div class="panel result-panel" id="result-panel">
+        <h2>Result</h2>
+        <div class="result-hero">
+          <div class="value" id="res-value">—</div>
+          <div class="label" id="res-label">Result</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>What is this tool?</h2>
+      <p>This calculator handles the four percentage questions people search for most: finding a percentage of a number, finding what percentage one number is of another, and finding the percentage increase or decrease between two values.</p>
+
+      <h2>How to use it</h2>
+      <ol>
+        <li>Pick the calculation type from the dropdown.</li>
+        <li>Fill in the two numbers it asks for.</li>
+        <li>Click "Calculate" to see the result instantly.</li>
+      </ol>
+
+      <h2>Example</h2>
+      <p>"What is 20% of 250?" → enter X = 20, Y = 250, choose the first option, and the result shows 50. "80 is what percentage of 400?" → choose the second option with X = 80, Y = 400, and the result shows 20%.</p>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item open">
+        <div class="faq-q">How do I calculate a percentage increase? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Percentage increase = ((New Value − Old Value) / Old Value) × 100. Select "Percentage increase from X to Y" and enter your old value as X and new value as Y.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can the result be negative? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Yes, for the increase/decrease options — a negative result for "increase" means the value actually went down, and vice versa.</div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>You May Also Need</h2>
+      <div class="related-grid" id="related-tools-grid"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+        <p class="desc">Simple tools for everyday life. Free, fast, and privacy-friendly — no account needed.</p>
+      </div>
+      <div class="footer-col"><h4>Explore</h4><a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Legal</h4><a href="../privacy-policy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a><a href="../disclaimer.html">Disclaimer</a></div>
+      <div class="footer-col"><h4>Popular</h4><a href="gst-calculator.html">GST Calculator</a><a href="discount-calculator.html">Discount Calculator</a><a href="emi-calculator.html">EMI Calculator</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 DailyTools Hub. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script>window.DTH_TOOL_ID = "percentage-calculator";</script>
+<script src="../js/tools.js"></script>
+<script src="../js/calculators.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderRelatedTools(["gst-calculator", "discount-calculator", "emi-calculator"]);
+
+    const modeEl = document.getElementById("mode");
+    const xEl = document.getElementById("val-x");
+    const yEl = document.getElementById("val-y");
+    const labelX = document.getElementById("label-x");
+    const labelY = document.getElementById("label-y");
+    const resultPanel = document.getElementById("result-panel");
+
+    const labels = {
+      of: ["Percentage (%)", "Of value"],
+      what: ["Part (X)", "Whole (Y)"],
+      increase: ["Old value (X)", "New value (Y)"],
+      decrease: ["Old value (X)", "New value (Y)"],
+    };
+
+    function updateLabels() {
+      const [lx, ly] = labels[modeEl.value];
+      labelX.textContent = lx;
+      labelY.textContent = ly;
+    }
+    modeEl.addEventListener("change", updateLabels);
+    updateLabels();
+
+    document.getElementById("calc-btn").addEventListener("click", () => {
+      const x = parseFloat(xEl.value);
+      const y = parseFloat(yEl.value);
+      const xField = xEl.closest(".field");
+      const yField = yEl.closest(".field");
+      xField.classList.toggle("has-error", isNaN(x));
+      yField.classList.toggle("has-error", isNaN(y));
+      if (isNaN(x) || isNaN(y)) return;
+
+      let value, label;
+      switch (modeEl.value) {
+        case "of":
+          value = calcPercentOf(x, y);
+          label = `${x}% of ${y}`;
+          break;
+        case "what":
+          value = calcWhatPercent(x, y);
+          label = `${x} as a percentage of ${y}`;
+          if (value === null) { yField.classList.add("has-error"); return; }
+          value = value + "%";
+          break;
+        case "increase":
+        case "decrease":
+          value = calcPercentChange(x, y);
+          label = `Change from ${x} to ${y}`;
+          if (value === null) { xField.classList.add("has-error"); return; }
+          value = (value > 0 ? "+" : "") + value + "%";
+          break;
+      }
+      document.getElementById("res-value").textContent = value;
+      document.getElementById("res-label").textContent = label;
+      resultPanel.classList.add("show", "fade-in");
+    });
+
+    document.getElementById("reset-btn").addEventListener("click", () => {
+      xEl.value = "";
+      yEl.value = "";
+      xEl.closest(".field").classList.remove("has-error");
+      yEl.closest(".field").classList.remove("has-error");
+      resultPanel.classList.remove("show");
+    });
+  });
+</script>
+</body>
+</html>

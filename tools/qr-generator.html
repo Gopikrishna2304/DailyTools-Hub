@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>QR Code Generator – Free Online QR Code Maker | DailyTools Hub</title>
+<meta name="description" content="Generate a free QR code from text, a URL, or contact info, and download it as an image — instantly, no sign-up." />
+<link rel="canonical" href="https://dailytoolshub.com/tools/qr-generator.html" />
+<link rel="icon" href="../favicon.ico" />
+<link rel="stylesheet" href="../css/style.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../all-tools.html#categories">Categories</a><a href="../about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="icon-btn hamburger" id="hamburger-btn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+  <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+</nav>
+
+<main>
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="../all-tools.html">All Tools</a> / QR Code Generator</p>
+    <div class="tool-header">
+      <h1>QR Code Generator</h1>
+      <p class="desc">Turn any text, link, or contact details into a scannable QR code — and download it as an image.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="panel">
+        <h2>Enter content</h2>
+        <div class="field">
+          <label for="qr-type">Type</label>
+          <select id="qr-type">
+            <option value="text">Plain text</option>
+            <option value="url">Website URL</option>
+            <option value="contact">Contact info (vCard)</option>
+          </select>
+        </div>
+
+        <div id="text-fields">
+          <div class="field">
+            <label for="qr-text">Text or URL</label>
+            <textarea id="qr-text" placeholder="Enter text or paste a link..." style="min-height:90px"></textarea>
+          </div>
+        </div>
+
+        <div id="contact-fields" style="display:none">
+          <div class="field-row">
+            <div class="field"><label for="c-name">Name</label><input type="text" id="c-name" placeholder="Full name" /></div>
+            <div class="field"><label for="c-phone">Phone</label><input type="text" id="c-phone" placeholder="+91 90000 00000" /></div>
+          </div>
+          <div class="field"><label for="c-email">Email</label><input type="text" id="c-email" placeholder="name@example.com" /></div>
+        </div>
+
+        <div class="action-row">
+          <button class="btn btn-primary" id="generate-btn">Generate QR Code</button>
+          <button class="btn btn-secondary" id="reset-btn">Reset</button>
+        </div>
+        <p class="hint mt-8">Your content is used only to draw the QR code in your browser — nothing is stored or uploaded.</p>
+      </div>
+
+      <div class="panel result-panel" id="result-panel">
+        <h2>Your QR code</h2>
+        <div id="qr-canvas-wrap" style="display:flex;justify-content:center;padding:16px;background:#fff;border-radius:var(--radius-md)"></div>
+        <div class="action-row" style="justify-content:center">
+          <button class="btn btn-primary" id="download-btn">⬇ Download QR Code</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>What is this tool?</h2>
+      <p>This tool creates a QR code — a scannable square barcode — from text, a website link, or contact details, so you can share information quickly by letting someone scan it with their phone camera.</p>
+      <h2>How to use it</h2>
+      <ol>
+        <li>Choose the content type: plain text/URL, or contact info.</li>
+        <li>Fill in the relevant fields.</li>
+        <li>Click "Generate QR Code", then "Download QR Code" to save it as an image.</li>
+      </ol>
+      <h2>Example</h2>
+      <p>Paste your website URL, click generate, and you'll get a scannable code that opens your site when scanned with any phone camera.</p>
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item open">
+        <div class="faq-q">Is my data stored when I generate a QR code? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">No — the QR code is drawn entirely in your browser. We don't store or transmit the content you enter.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What format is the downloaded QR code? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">The QR code downloads as a PNG image, suitable for printing or sharing digitally.</div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>You May Also Need</h2>
+      <div class="related-grid" id="related-tools-grid"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+        <p class="desc">Simple tools for everyday life. Free, fast, and privacy-friendly — no account needed.</p>
+      </div>
+      <div class="footer-col"><h4>Explore</h4><a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Legal</h4><a href="../privacy-policy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a><a href="../disclaimer.html">Disclaimer</a></div>
+      <div class="footer-col"><h4>Popular</h4><a href="password-generator.html">Password Generator</a><a href="word-counter.html">Word Counter</a><a href="image-compressor.html">Image Compressor</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 DailyTools Hub. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script>window.DTH_TOOL_ID = "qr-generator";</script>
+<script src="../js/tools.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderRelatedTools(["password-generator", "word-counter", "image-compressor"]);
+
+    const typeEl = document.getElementById("qr-type");
+    const textFields = document.getElementById("text-fields");
+    const contactFields = document.getElementById("contact-fields");
+    const resultPanel = document.getElementById("result-panel");
+    const canvasWrap = document.getElementById("qr-canvas-wrap");
+    let qrInstance = null;
+
+    typeEl.addEventListener("change", () => {
+      const isContact = typeEl.value === "contact";
+      textFields.style.display = isContact ? "none" : "";
+      contactFields.style.display = isContact ? "" : "none";
+    });
+
+    function buildContent() {
+      if (typeEl.value === "contact") {
+        const name = document.getElementById("c-name").value.trim();
+        const phone = document.getElementById("c-phone").value.trim();
+        const email = document.getElementById("c-email").value.trim();
+        if (!name && !phone && !email) return "";
+        return `BEGIN:VCARD\nVERSION:3.0\nFN:${name}\nTEL:${phone}\nEMAIL:${email}\nEND:VCARD`;
+      }
+      return document.getElementById("qr-text").value.trim();
+    }
+
+    document.getElementById("generate-btn").addEventListener("click", () => {
+      const content = buildContent();
+      if (!content) {
+        showToast("Please enter some content first.");
+        return;
+      }
+      if (typeof QRCode === "undefined") {
+        showToast("QR library still loading — try again in a second.");
+        return;
+      }
+      canvasWrap.innerHTML = "";
+      qrInstance = new QRCode(canvasWrap, {
+        text: content,
+        width: 240,
+        height: 240,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.M,
+      });
+      resultPanel.classList.add("show", "fade-in");
+    });
+
+    document.getElementById("download-btn").addEventListener("click", () => {
+      const img = canvasWrap.querySelector("img");
+      const canvas = canvasWrap.querySelector("canvas");
+      const src = img ? img.src : canvas ? canvas.toDataURL("image/png") : null;
+      if (!src) {
+        showToast("Generate a QR code first.");
+        return;
+      }
+      const a = document.createElement("a");
+      a.href = src;
+      a.download = "dailytoolshub-qr-code.png";
+      a.click();
+    });
+
+    document.getElementById("reset-btn").addEventListener("click", () => {
+      document.getElementById("qr-text").value = "";
+      document.getElementById("c-name").value = "";
+      document.getElementById("c-phone").value = "";
+      document.getElementById("c-email").value = "";
+      canvasWrap.innerHTML = "";
+      resultPanel.classList.remove("show");
+    });
+  });
+</script>
+</body>
+</html>

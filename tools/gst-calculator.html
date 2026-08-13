@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GST Calculator – Add or Remove GST Online | DailyTools Hub</title>
+<meta name="description" content="Calculate GST-inclusive or GST-exclusive amounts instantly. Add GST to a price or remove GST from a final amount." />
+<link rel="canonical" href="https://dailytoolshub.com/tools/gst-calculator.html" />
+<link rel="icon" href="../favicon.ico" />
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../all-tools.html#categories">Categories</a><a href="../about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="icon-btn hamburger" id="hamburger-btn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+  <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+</nav>
+
+<main>
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="../all-tools.html">All Tools</a> / GST Calculator</p>
+    <div class="tool-header">
+      <h1>GST Calculator</h1>
+      <p class="desc">Add GST to a base price, or work backward to find the original amount from a GST-inclusive price.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="panel">
+        <h2>Enter details</h2>
+        <div class="field">
+          <label for="gst-type">Calculation type</label>
+          <select id="gst-type">
+            <option value="add">Add GST (I have the amount before tax)</option>
+            <option value="remove">Remove GST (I have the final amount)</option>
+          </select>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="amount" id="amount-label">Amount (₹)</label>
+            <input type="number" id="amount" placeholder="e.g. 1000" min="0" />
+            <div class="error-msg">Please enter a valid amount.</div>
+          </div>
+          <div class="field">
+            <label for="gst-pct">GST rate (%)</label>
+            <select id="gst-pct">
+              <option value="5">5%</option>
+              <option value="12">12%</option>
+              <option value="18" selected>18%</option>
+              <option value="28">28%</option>
+            </select>
+          </div>
+        </div>
+        <div class="action-row">
+          <button class="btn btn-primary" id="calc-btn">Calculate</button>
+          <button class="btn btn-secondary" id="reset-btn">Reset</button>
+        </div>
+      </div>
+
+      <div class="panel result-panel" id="result-panel">
+        <h2>Result</h2>
+        <div class="result-hero">
+          <div class="value" id="res-final">—</div>
+          <div class="label">Final Amount (incl. GST)</div>
+        </div>
+        <div class="result-grid">
+          <div class="result-stat"><div class="value" id="res-original">—</div><div class="label">Original Amount</div></div>
+          <div class="result-stat"><div class="value" id="res-gst">—</div><div class="label">GST Amount</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>What is this tool?</h2>
+      <p>GST (Goods and Services Tax) is added to the price of most goods and services. This calculator lets you either add GST on top of a base price, or work backward from a GST-inclusive price to find the original amount and the tax portion.</p>
+
+      <h2>How to use it</h2>
+      <ol>
+        <li>Choose whether you want to add GST or remove GST.</li>
+        <li>Enter the amount and select the applicable GST rate.</li>
+        <li>Click "Calculate" to see the original amount, GST amount, and final amount.</li>
+      </ol>
+
+      <h2>Example</h2>
+      <p>Adding 18% GST to ₹1,000 gives a GST amount of ₹180 and a final amount of ₹1,180. Removing 18% GST from a final amount of ₹1,180 gives back an original amount of ₹1,000.</p>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item open">
+        <div class="faq-q">What's the difference between adding and removing GST? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">"Add GST" starts from a price before tax and calculates the tax-inclusive total. "Remove GST" starts from a tax-inclusive price and works backward to find the pre-tax amount.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Which GST rate should I use? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">GST rates vary by category of goods or service. Check the applicable rate for your specific product or service with official GST rate schedules or your accountant.</div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>You May Also Need</h2>
+      <div class="related-grid" id="related-tools-grid"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+        <p class="desc">Simple tools for everyday life. Free, fast, and privacy-friendly — no account needed.</p>
+      </div>
+      <div class="footer-col"><h4>Explore</h4><a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Legal</h4><a href="../privacy-policy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a><a href="../disclaimer.html">Disclaimer</a></div>
+      <div class="footer-col"><h4>Popular</h4><a href="discount-calculator.html">Discount Calculator</a><a href="percentage-calculator.html">Percentage Calculator</a><a href="emi-calculator.html">EMI Calculator</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 DailyTools Hub. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script>window.DTH_TOOL_ID = "gst-calculator";</script>
+<script src="../js/tools.js"></script>
+<script src="../js/calculators.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderRelatedTools(["percentage-calculator", "discount-calculator", "salary-calculator"]);
+
+    const typeEl = document.getElementById("gst-type");
+    const amountEl = document.getElementById("amount");
+    const amountLabel = document.getElementById("amount-label");
+    const gstPctEl = document.getElementById("gst-pct");
+    const resultPanel = document.getElementById("result-panel");
+
+    typeEl.addEventListener("change", () => {
+      amountLabel.textContent = typeEl.value === "add" ? "Amount before GST (₹)" : "Final amount incl. GST (₹)";
+    });
+
+    document.getElementById("calc-btn").addEventListener("click", () => {
+      const amount = parseFloat(amountEl.value);
+      const gstPct = parseFloat(gstPctEl.value);
+      const field = amountEl.closest(".field");
+      field.classList.toggle("has-error", isNaN(amount) || amount < 0);
+      if (isNaN(amount) || amount < 0) return;
+
+      const result = typeEl.value === "add" ? calcGSTAdd(amount, gstPct) : calcGSTRemove(amount, gstPct);
+      document.getElementById("res-final").textContent = formatCurrency(result.final);
+      document.getElementById("res-original").textContent = formatCurrency(result.original);
+      document.getElementById("res-gst").textContent = formatCurrency(result.gstAmount);
+      resultPanel.classList.add("show", "fade-in");
+    });
+
+    document.getElementById("reset-btn").addEventListener("click", () => {
+      amountEl.value = "";
+      amountEl.closest(".field").classList.remove("has-error");
+      resultPanel.classList.remove("show");
+    });
+  });
+</script>
+</body>
+</html>

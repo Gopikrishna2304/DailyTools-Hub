@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Date Calculator – Add, Subtract & Compare Dates | DailyTools Hub</title>
+<meta name="description" content="Find the difference between two dates, or add/subtract days from a date, with our free online date calculator." />
+<link rel="canonical" href="https://dailytoolshub.com/tools/date-calculator.html" />
+<link rel="icon" href="../favicon.ico" />
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../all-tools.html#categories">Categories</a><a href="../about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="icon-btn hamburger" id="hamburger-btn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+  <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+</nav>
+
+<main>
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="../all-tools.html">All Tools</a> / Date Calculator</p>
+    <div class="tool-header">
+      <h1>Date Calculator</h1>
+      <p class="desc">Find the difference between two dates, or add/subtract days from a starting date.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="panel">
+        <h2>Choose a mode</h2>
+        <div class="field">
+          <label for="mode">What do you want to do?</label>
+          <select id="mode">
+            <option value="diff">Find difference between two dates</option>
+            <option value="add">Add days to a date</option>
+            <option value="subtract">Subtract days from a date</option>
+          </select>
+        </div>
+
+        <div id="diff-fields">
+          <div class="field-row">
+            <div class="field">
+              <label for="start-date">Start date</label>
+              <input type="date" id="start-date" />
+              <div class="error-msg">Please enter a valid date.</div>
+            </div>
+            <div class="field">
+              <label for="end-date">End date</label>
+              <input type="date" id="end-date" />
+              <div class="error-msg">Please enter a valid date.</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="shift-fields" style="display:none">
+          <div class="field-row">
+            <div class="field">
+              <label for="base-date">Date</label>
+              <input type="date" id="base-date" />
+              <div class="error-msg">Please enter a valid date.</div>
+            </div>
+            <div class="field">
+              <label for="days-shift">Number of days</label>
+              <input type="number" id="days-shift" min="0" placeholder="e.g. 45" />
+              <div class="error-msg">Please enter a valid number of days.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="action-row">
+          <button class="btn btn-primary" id="calc-btn">Calculate</button>
+          <button class="btn btn-secondary" id="reset-btn">Reset</button>
+        </div>
+      </div>
+
+      <div class="panel result-panel" id="result-panel">
+        <h2>Result</h2>
+        <div class="result-hero">
+          <div class="value" id="res-headline">—</div>
+          <div class="label" id="res-label">Result</div>
+        </div>
+        <div class="result-grid" id="res-grid"></div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>What is this tool?</h2>
+      <p>The Date Calculator has three modes: finding how many years, months and days lie between two dates; adding a number of days to a date to find a future date; or subtracting days to find a past date.</p>
+      <h2>How to use it</h2>
+      <ol>
+        <li>Pick a mode from the dropdown.</li>
+        <li>Fill in the date(s) requested.</li>
+        <li>Click "Calculate" to see the result instantly.</li>
+      </ol>
+      <h2>Example</h2>
+      <p>Finding the difference between 1 January 2026 and 15 August 2026 shows the exact number of months and days between them, and the total day count. Adding 45 days to 1 January 2026 gives 15 February 2026.</p>
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item open">
+        <div class="faq-q">Does the date difference include both start and end dates? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">The difference is calculated as the number of days between the two dates (end minus start), not an inclusive day count.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I subtract more days than are in the month? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Yes — the calculator correctly rolls over into previous or following months and years as needed.</div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>You May Also Need</h2>
+      <div class="related-grid" id="related-tools-grid"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+        <p class="desc">Simple tools for everyday life. Free, fast, and privacy-friendly — no account needed.</p>
+      </div>
+      <div class="footer-col"><h4>Explore</h4><a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Legal</h4><a href="../privacy-policy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a><a href="../disclaimer.html">Disclaimer</a></div>
+      <div class="footer-col"><h4>Popular</h4><a href="age-calculator.html">Age Calculator</a><a href="days-calculator.html">Days Calculator</a><a href="qr-generator.html">QR Generator</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 DailyTools Hub. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script>window.DTH_TOOL_ID = "date-calculator";</script>
+<script src="../js/tools.js"></script>
+<script src="../js/calculators.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderRelatedTools(["days-calculator", "age-calculator", "percentage-calculator"]);
+
+    const modeEl = document.getElementById("mode");
+    const diffFields = document.getElementById("diff-fields");
+    const shiftFields = document.getElementById("shift-fields");
+    const resultPanel = document.getElementById("result-panel");
+
+    modeEl.addEventListener("change", () => {
+      const isDiff = modeEl.value === "diff";
+      diffFields.style.display = isDiff ? "" : "none";
+      shiftFields.style.display = isDiff ? "none" : "";
+      resultPanel.classList.remove("show");
+    });
+
+    document.getElementById("calc-btn").addEventListener("click", () => {
+      if (modeEl.value === "diff") {
+        const startEl = document.getElementById("start-date");
+        const endEl = document.getElementById("end-date");
+        const startField = startEl.closest(".field");
+        const endField = endEl.closest(".field");
+        startField.classList.toggle("has-error", !startEl.value);
+        endField.classList.toggle("has-error", !endEl.value);
+        if (!startEl.value || !endEl.value) return;
+
+        const result = calcDateDifference(startEl.value, endEl.value);
+        if (!result) return;
+        document.getElementById("res-headline").textContent = `${result.totalDays.toLocaleString("en-IN")} days`;
+        document.getElementById("res-label").textContent = "Total Difference";
+        document.getElementById("res-grid").innerHTML = `
+          <div class="result-stat"><div class="value">${result.years}</div><div class="label">Years</div></div>
+          <div class="result-stat"><div class="value">${result.months}</div><div class="label">Months</div></div>
+          <div class="result-stat"><div class="value">${result.days}</div><div class="label">Days</div></div>`;
+      } else {
+        const baseEl = document.getElementById("base-date");
+        const daysEl = document.getElementById("days-shift");
+        const baseField = baseEl.closest(".field");
+        const daysField = daysEl.closest(".field");
+        const days = parseInt(daysEl.value, 10);
+        baseField.classList.toggle("has-error", !baseEl.value);
+        daysField.classList.toggle("has-error", isNaN(days) || days < 0);
+        if (!baseEl.value || isNaN(days) || days < 0) return;
+
+        const signedDays = modeEl.value === "subtract" ? -days : days;
+        const newDate = calcAddDays(baseEl.value, signedDays);
+        if (!newDate) return;
+        document.getElementById("res-headline").textContent = formatDate(newDate);
+        document.getElementById("res-label").textContent = modeEl.value === "subtract" ? `${days} days before` : `${days} days after`;
+        document.getElementById("res-grid").innerHTML = "";
+      }
+      resultPanel.classList.add("show", "fade-in");
+    });
+
+    document.getElementById("reset-btn").addEventListener("click", () => {
+      ["start-date", "end-date", "base-date", "days-shift"].forEach((id) => {
+        const el = document.getElementById(id);
+        el.value = "";
+        el.closest(".field").classList.remove("has-error");
+      });
+      resultPanel.classList.remove("show");
+    });
+  });
+</script>
+</body>
+</html>

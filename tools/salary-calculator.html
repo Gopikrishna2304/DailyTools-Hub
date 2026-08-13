@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Salary Calculator – Monthly to Annual Salary | DailyTools Hub</title>
+<meta name="description" content="Convert monthly salary to annual salary (or back), and estimate take-home pay after a deduction percentage you specify." />
+<link rel="canonical" href="https://dailytoolshub.com/tools/salary-calculator.html" />
+<link rel="icon" href="../favicon.ico" />
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../all-tools.html#categories">Categories</a><a href="../about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="icon-btn hamburger" id="hamburger-btn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+  <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+</nav>
+
+<main>
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="../all-tools.html">All Tools</a> / Salary Calculator</p>
+    <div class="tool-header">
+      <h1>Salary Calculator</h1>
+      <p class="desc">Convert your monthly salary to an annual figure, and estimate take-home pay after deductions you specify.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="panel">
+        <h2>Enter details</h2>
+        <div class="field">
+          <label for="monthly">Monthly salary (₹)</label>
+          <input type="number" id="monthly" placeholder="e.g. 60000" min="0" />
+          <div class="error-msg">Please enter a valid salary.</div>
+        </div>
+        <div class="field">
+          <label for="deduction">Estimated deductions (% of annual salary)</label>
+          <input type="number" id="deduction" placeholder="e.g. 10" min="0" max="100" />
+          <p class="hint">Include tax, PF, insurance, etc. as one combined percentage. Leave blank for 0%.</p>
+        </div>
+        <div class="action-row">
+          <button class="btn btn-primary" id="calc-btn">Calculate</button>
+          <button class="btn btn-secondary" id="reset-btn">Reset</button>
+        </div>
+      </div>
+
+      <div class="panel result-panel" id="result-panel">
+        <h2>Result</h2>
+        <div class="result-hero">
+          <div class="value" id="res-annual">—</div>
+          <div class="label">Gross Annual Salary</div>
+        </div>
+        <div class="result-grid">
+          <div class="result-stat"><div class="value" id="res-deduction">—</div><div class="label">Est. Deductions</div></div>
+          <div class="result-stat"><div class="value" id="res-net-annual">—</div><div class="label">Net Annual</div></div>
+          <div class="result-stat"><div class="value" id="res-net-monthly">—</div><div class="label">Net Monthly (Est.)</div></div>
+        </div>
+        <p class="hint mt-8">This is a simplified estimate, not an official tax computation. See our <a href="../disclaimer.html" style="color:var(--accent)">disclaimer</a>.</p>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>What is this tool?</h2>
+      <p>The Salary Calculator converts a monthly salary figure into its annual equivalent, and applies a deduction percentage you provide (to represent tax, provident fund, insurance, etc.) to estimate net take-home pay.</p>
+      <h2>How to use it</h2>
+      <ol>
+        <li>Enter your gross monthly salary.</li>
+        <li>Enter an estimated combined deduction percentage — or leave it blank if you just want the annual conversion.</li>
+        <li>Click "Calculate" to see your gross annual salary and estimated net figures.</li>
+      </ol>
+      <h2>Example</h2>
+      <p>A monthly salary of ₹60,000 works out to a gross annual salary of ₹7,20,000. With an estimated 10% combined deduction, the estimated net annual salary is ₹6,48,000 (₹54,000/month).</p>
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item open">
+        <div class="faq-q">Is this an official tax calculation? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">No. This tool applies a single deduction percentage that you provide as a simplified estimate. It does not calculate official income tax slabs, PF rules, or other statutory deductions for any specific country. For accurate figures, consult your payroll department or a tax professional.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What should I enter for deductions if I don't know the exact number? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">You can leave it blank to see just the gross annual conversion, or enter a rough estimate (e.g. 10-20%) to get a ballpark net figure.</div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>You May Also Need</h2>
+      <div class="related-grid" id="related-tools-grid"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+        <p class="desc">Simple tools for everyday life. Free, fast, and privacy-friendly — no account needed.</p>
+      </div>
+      <div class="footer-col"><h4>Explore</h4><a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Legal</h4><a href="../privacy-policy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a><a href="../disclaimer.html">Disclaimer</a></div>
+      <div class="footer-col"><h4>Popular</h4><a href="emi-calculator.html">EMI Calculator</a><a href="gst-calculator.html">GST Calculator</a><a href="percentage-calculator.html">Percentage Calculator</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 DailyTools Hub. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script>window.DTH_TOOL_ID = "salary-calculator";</script>
+<script src="../js/tools.js"></script>
+<script src="../js/calculators.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderRelatedTools(["emi-calculator", "gst-calculator", "percentage-calculator"]);
+
+    const monthlyEl = document.getElementById("monthly");
+    const deductionEl = document.getElementById("deduction");
+    const resultPanel = document.getElementById("result-panel");
+
+    document.getElementById("calc-btn").addEventListener("click", () => {
+      const monthly = parseFloat(monthlyEl.value);
+      const deduction = deductionEl.value ? parseFloat(deductionEl.value) : 0;
+      const monthlyField = monthlyEl.closest(".field");
+      monthlyField.classList.toggle("has-error", isNaN(monthly) || monthly <= 0);
+      if (isNaN(monthly) || monthly <= 0) return;
+      if (isNaN(deduction) || deduction < 0 || deduction > 100) {
+        deductionEl.closest(".field").classList.add("has-error");
+        return;
+      }
+      deductionEl.closest(".field").classList.remove("has-error");
+
+      const result = calcSalary(monthly, deduction);
+      document.getElementById("res-annual").textContent = formatCurrency(result.annual);
+      document.getElementById("res-deduction").textContent = formatCurrency(result.deduction);
+      document.getElementById("res-net-annual").textContent = formatCurrency(result.netAnnual);
+      document.getElementById("res-net-monthly").textContent = formatCurrency(result.netMonthly);
+      resultPanel.classList.add("show", "fade-in");
+    });
+
+    document.getElementById("reset-btn").addEventListener("click", () => {
+      monthlyEl.value = "";
+      deductionEl.value = "";
+      monthlyEl.closest(".field").classList.remove("has-error");
+      deductionEl.closest(".field").classList.remove("has-error");
+      resultPanel.classList.remove("show");
+    });
+  });
+</script>
+</body>
+</html>

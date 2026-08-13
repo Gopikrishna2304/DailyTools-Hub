@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DailyTools Hub – Free Online Calculators & Everyday Tools</title>
+<meta name="description" content="Free online tools for everyday life — age calculator, EMI calculator, GST calculator, unit converter, QR code generator, password generator and more. Fast, private, no login." />
+<link rel="canonical" href="https://dailytoolshub.com/" />
+<meta property="og:title" content="DailyTools Hub – Simple Tools for Everyday Life" />
+<meta property="og:description" content="Free calculators, converters and generators you'll actually use every day." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://dailytoolshub.com/" />
+<link rel="icon" href="favicon.ico" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">🧰</span>
+      DailyTools Hub
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="all-tools.html">All Tools</a>
+      <a href="all-tools.html#categories">Categories</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="icon-btn hamburger" id="hamburger-btn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+  <a href="index.html">Home</a>
+  <a href="all-tools.html">All Tools</a>
+  <a href="all-tools.html#categories">Categories</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+  <section class="hero">
+    <span class="hero-blob hero-blob-1"></span>
+    <span class="hero-blob hero-blob-2"></span>
+    <div class="container">
+      <span class="eyebrow">✨ 15 free tools, zero login</span>
+      <h1>Simple Tools for Everyday Life</h1>
+      <p class="lead">Calculate, convert, compress, generate and manage everyday tasks quickly and easily.</p>
+
+      <div class="search-wrap">
+        <div class="search-box">
+          <span class="search-icon-emoji" aria-hidden="true">🔍</span>
+          <input type="text" id="global-search" placeholder="What do you need today? Try 'calculate my age'" autocomplete="off" aria-label="Search tools" />
+        </div>
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><h2>⚡ Quick Tools</h2></div>
+      <div class="quick-tools" id="quick-tools-grid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="recent-tools-section" style="display:none">
+    <div class="container">
+      <div class="section-head"><h2>Recently Used</h2></div>
+      <div class="grid" id="recent-tools-grid"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Popular Tools</h2>
+          <p class="section-sub">The tools people use most, every single day.</p>
+        </div>
+        <a class="view-all" href="all-tools.html">View all →</a>
+      </div>
+      <div class="grid" id="popular-tools-grid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="categories">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Browse by Category</h2>
+          <p class="section-sub">Find exactly the type of tool you need.</p>
+        </div>
+      </div>
+      <div class="grid" id="categories-grid"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><h2>Today's Useful Tools</h2></div>
+      <div class="grid" id="today-tools-grid"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="panel text-center" style="max-width:640px;margin:0 auto;padding:36px 26px">
+        <h2 style="font-size:20px;margin-bottom:8px">Didn't find what you need?</h2>
+        <p style="color:var(--text-muted);font-size:14.5px;margin-bottom:18px">We're adding new tools regularly. Tell us what would help you.</p>
+        <a href="contact.html" class="btn btn-primary">Suggest a Tool</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+        <p class="desc">Simple tools for everyday life. Free, fast, and privacy-friendly — no account needed.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="all-tools.html">All Tools</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </div>
+      <div class="footer-col">
+        <h4>Popular</h4>
+        <a href="tools/age-calculator.html">Age Calculator</a>
+        <a href="tools/emi-calculator.html">EMI Calculator</a>
+        <a href="tools/qr-generator.html">QR Generator</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DailyTools Hub. All rights reserved.</span>
+      <span>Made for people who just want things calculated quickly.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/tools.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

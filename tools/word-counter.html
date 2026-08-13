@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Word Counter – Count Words, Characters & Reading Time | DailyTools Hub</title>
+<meta name="description" content="Free online word counter — count words, characters, sentences, paragraphs and estimated reading time as you type or paste text." />
+<link rel="canonical" href="https://dailytoolshub.com/tools/word-counter.html" />
+<link rel="icon" href="../favicon.ico" />
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../all-tools.html#categories">Categories</a><a href="../about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="icon-btn hamburger" id="hamburger-btn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+  <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+</nav>
+
+<main>
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="../all-tools.html">All Tools</a> / Word Counter</p>
+    <div class="tool-header">
+      <h1>Word Counter</h1>
+      <p class="desc">Paste or type your text to instantly see word count, character count, sentences, paragraphs and reading time.</p>
+    </div>
+
+    <div class="tool-layout" style="max-width:820px">
+      <div class="panel">
+        <h2>Your text</h2>
+        <div class="field">
+          <textarea id="text-input" placeholder="Start typing or paste your text here..." style="min-height:220px"></textarea>
+        </div>
+        <div class="result-grid" style="margin-top:16px">
+          <div class="result-stat"><div class="value" id="stat-words">0</div><div class="label">Words</div></div>
+          <div class="result-stat"><div class="value" id="stat-chars">0</div><div class="label">Characters</div></div>
+          <div class="result-stat"><div class="value" id="stat-chars-nospace">0</div><div class="label">Chars (no spaces)</div></div>
+          <div class="result-stat"><div class="value" id="stat-sentences">0</div><div class="label">Sentences</div></div>
+          <div class="result-stat"><div class="value" id="stat-paragraphs">0</div><div class="label">Paragraphs</div></div>
+          <div class="result-stat"><div class="value" id="stat-reading">0 min</div><div class="label">Reading Time</div></div>
+        </div>
+        <div class="action-row">
+          <button class="btn btn-secondary" id="clear-btn">Clear Text</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>What is this tool?</h2>
+      <p>The Word Counter gives a live breakdown of your text — total words, characters (with and without spaces), sentences, paragraphs, and an estimated reading time — useful for essays, social posts, and SEO content.</p>
+      <h2>How to use it</h2>
+      <ol>
+        <li>Type directly into the text box, or paste text you already have.</li>
+        <li>Watch the stats update automatically as you type.</li>
+      </ol>
+      <h2>Example</h2>
+      <p>Pasting a 500-word article shows roughly 2,800 characters, about 25 sentences, and an estimated reading time of around 2-3 minutes at average reading speed.</p>
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item open">
+        <div class="faq-q">How is reading time calculated? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Reading time is estimated using an average reading speed of about 200 words per minute.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is my text saved or sent anywhere? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">No. All counting happens locally in your browser — your text is never uploaded or stored.</div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>You May Also Need</h2>
+      <div class="related-grid" id="related-tools-grid"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+        <p class="desc">Simple tools for everyday life. Free, fast, and privacy-friendly — no account needed.</p>
+      </div>
+      <div class="footer-col"><h4>Explore</h4><a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Legal</h4><a href="../privacy-policy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a><a href="../disclaimer.html">Disclaimer</a></div>
+      <div class="footer-col"><h4>Popular</h4><a href="character-counter.html">Character Counter</a><a href="password-generator.html">Password Generator</a><a href="qr-generator.html">QR Generator</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 DailyTools Hub. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script>window.DTH_TOOL_ID = "word-counter";</script>
+<script src="../js/tools.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderRelatedTools(["character-counter", "password-generator", "qr-generator"]);
+
+    const textEl = document.getElementById("text-input");
+
+    function update() {
+      const text = textEl.value;
+      const trimmed = text.trim();
+      const words = trimmed ? trimmed.split(/\s+/).length : 0;
+      const chars = text.length;
+      const charsNoSpace = text.replace(/\s/g, "").length;
+      const sentences = trimmed ? (trimmed.match(/[.!?]+(?=\s|$)/g) || []).length || (trimmed ? 1 : 0) : 0;
+      const paragraphs = trimmed ? trimmed.split(/\n\s*\n/).filter((p) => p.trim()).length : 0;
+      const readingMinutes = words ? Math.max(1, Math.round(words / 200)) : 0;
+
+      document.getElementById("stat-words").textContent = words.toLocaleString("en-IN");
+      document.getElementById("stat-chars").textContent = chars.toLocaleString("en-IN");
+      document.getElementById("stat-chars-nospace").textContent = charsNoSpace.toLocaleString("en-IN");
+      document.getElementById("stat-sentences").textContent = sentences.toLocaleString("en-IN");
+      document.getElementById("stat-paragraphs").textContent = paragraphs.toLocaleString("en-IN");
+      document.getElementById("stat-reading").textContent = `${readingMinutes} min`;
+    }
+
+    textEl.addEventListener("input", update);
+    document.getElementById("clear-btn").addEventListener("click", () => {
+      textEl.value = "";
+      update();
+    });
+    update();
+  });
+</script>
+</body>
+</html>

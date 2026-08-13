@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Age Calculator – Calculate Your Exact Age | DailyTools Hub</title>
+<meta name="description" content="Calculate your exact age in years, months and days using our free online age calculator. Also shows days until your next birthday." />
+<link rel="canonical" href="https://dailytoolshub.com/tools/age-calculator.html" />
+<meta property="og:title" content="Age Calculator – DailyTools Hub" />
+<meta property="og:description" content="Calculate your exact age in years, months and days, and see how many days until your next birthday." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="../favicon.ico" />
+<link rel="stylesheet" href="../css/style.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "How is age calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Age is calculated by finding the difference between your date of birth and today's date (or any date you choose), expressed in complete years, months and days."}},
+    {"@type": "Question", "name": "Why does my age in months look different from what I expected?", "acceptedAnswer": {"@type": "Answer", "text": "The calculator counts only complete months. If your birth day hasn't occurred yet in the current month, that month isn't counted as complete."}}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../all-tools.html#categories">Categories</a><a href="../about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="icon-btn hamburger" id="hamburger-btn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+  <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+</nav>
+
+<main>
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="../all-tools.html">All Tools</a> / Age Calculator</p>
+
+    <div class="tool-header">
+      <h1>Age Calculator</h1>
+      <p class="desc">Find your exact age in years, months and days — plus how many days remain until your next birthday.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="panel">
+        <h2>Enter your details</h2>
+        <div class="field">
+          <label for="dob">Date of birth</label>
+          <input type="date" id="dob" />
+          <div class="error-msg" id="dob-error">Please enter a valid date of birth.</div>
+        </div>
+        <div class="field">
+          <label for="on-date">Calculate age as of (optional)</label>
+          <input type="date" id="on-date" />
+          <p class="hint">Leave blank to calculate your age as of today.</p>
+        </div>
+        <div class="action-row">
+          <button class="btn btn-primary" id="calc-btn">Calculate Age</button>
+          <button class="btn btn-secondary" id="reset-btn">Reset</button>
+        </div>
+      </div>
+
+      <div class="panel result-panel" id="result-panel">
+        <h2>Your age</h2>
+        <div class="result-hero">
+          <div class="value" id="age-headline">—</div>
+          <div class="label">years, months &amp; days</div>
+        </div>
+        <div class="result-grid">
+          <div class="result-stat"><div class="value" id="stat-years">—</div><div class="label">Years</div></div>
+          <div class="result-stat"><div class="value" id="stat-months">—</div><div class="label">Months</div></div>
+          <div class="result-stat"><div class="value" id="stat-days">—</div><div class="label">Days</div></div>
+          <div class="result-stat"><div class="value" id="stat-totaldays">—</div><div class="label">Total Days Lived</div></div>
+        </div>
+        <p class="hint mt-8" id="next-birthday-text"></p>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>What is this tool?</h2>
+      <p>The Age Calculator works out your exact age — down to the year, month and day — from your date of birth. It's useful for form filling, eligibility checks, birthday planning, or simple curiosity.</p>
+
+      <h2>How to use it</h2>
+      <ol>
+        <li>Enter your date of birth in the "Date of birth" field.</li>
+        <li>(Optional) Choose a different reference date if you want your age as of a specific day, instead of today.</li>
+        <li>Click "Calculate Age" to see your age in years, months and days, plus days left until your next birthday.</li>
+      </ol>
+
+      <h2>Example</h2>
+      <p>If you were born on 15 August 2000 and calculate your age today, the tool shows your age in complete years, the extra months since your last birthday, and the extra days since your last month-anniversary — along with how many days remain until 15 August of next year.</p>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item open">
+        <div class="faq-q">How is age calculated? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Age is calculated by finding the difference between your date of birth and today's date (or any date you choose), expressed in complete years, months and days.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Why does my age in months look different from what I expected? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">The calculator counts only complete months. If your birth day hasn't occurred yet in the current month, that month isn't counted as complete.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is my date of birth stored anywhere? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">No. The calculation happens entirely in your browser — nothing is sent to our servers or saved.</div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>You May Also Need</h2>
+      <div class="related-grid" id="related-tools-grid"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+        <p class="desc">Simple tools for everyday life. Free, fast, and privacy-friendly — no account needed.</p>
+      </div>
+      <div class="footer-col"><h4>Explore</h4><a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Legal</h4><a href="../privacy-policy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a><a href="../disclaimer.html">Disclaimer</a></div>
+      <div class="footer-col"><h4>Popular</h4><a href="emi-calculator.html">EMI Calculator</a><a href="date-calculator.html">Date Calculator</a><a href="qr-generator.html">QR Generator</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 DailyTools Hub. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script>window.DTH_TOOL_ID = "age-calculator";</script>
+<script src="../js/tools.js"></script>
+<script src="../js/calculators.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderRelatedTools(["date-calculator", "days-calculator", "percentage-calculator"]);
+
+    const dobInput = document.getElementById("dob");
+    const onDateInput = document.getElementById("on-date");
+    const dobField = dobInput.closest(".field");
+    const resultPanel = document.getElementById("result-panel");
+
+    document.getElementById("calc-btn").addEventListener("click", () => {
+      dobField.classList.remove("has-error");
+      if (!dobInput.value) {
+        dobField.classList.add("has-error");
+        return;
+      }
+      const result = calcAge(dobInput.value, onDateInput.value || null);
+      if (!result || result.error) {
+        dobField.classList.add("has-error");
+        document.getElementById("dob-error").textContent = (result && result.error) || "Please enter a valid date of birth.";
+        return;
+      }
+      document.getElementById("age-headline").textContent = `${result.years}y ${result.months}m ${result.days}d`;
+      document.getElementById("stat-years").textContent = result.years;
+      document.getElementById("stat-months").textContent = result.months;
+      document.getElementById("stat-days").textContent = result.days;
+      document.getElementById("stat-totaldays").textContent = result.totalDays.toLocaleString("en-IN");
+      document.getElementById("next-birthday-text").textContent =
+        result.daysToNextBirthday === 0
+          ? "🎉 Today is your birthday!"
+          : `${result.daysToNextBirthday} day${result.daysToNextBirthday === 1 ? "" : "s"} until your next birthday.`;
+      resultPanel.classList.add("show", "fade-in");
+    });
+
+    document.getElementById("reset-btn").addEventListener("click", () => {
+      dobInput.value = "";
+      onDateInput.value = "";
+      dobField.classList.remove("has-error");
+      resultPanel.classList.remove("show");
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>All Tools – DailyTools Hub</title>
+<meta name="description" content="Browse every free tool on DailyTools Hub — calculators, converters, generators and more, organized by category." />
+<link rel="canonical" href="https://dailytoolshub.com/all-tools.html" />
+<link rel="icon" href="favicon.ico" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="all-tools.html" aria-current="page">All Tools</a>
+      <a href="all-tools.html#categories">Categories</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="icon-btn hamburger" id="hamburger-btn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+  <a href="index.html">Home</a>
+  <a href="all-tools.html">All Tools</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <h1 id="page-title">All Tools</h1>
+      <p class="lead" id="page-sub">Every free tool on DailyTools Hub, in one place.</p>
+      <div class="search-wrap" style="margin:24px 0 0">
+        <div class="search-box">
+          <span class="search-icon-emoji" aria-hidden="true">🔍</span>
+          <input type="text" id="global-search" placeholder="Search tools..." autocomplete="off" aria-label="Search tools" />
+        </div>
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="categories">
+    <div class="container">
+      <div class="quick-tools" id="category-filters" style="margin-bottom:26px"></div>
+      <div class="grid" id="all-tools-grid"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+        <p class="desc">Simple tools for everyday life. Free, fast, and privacy-friendly — no account needed.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="all-tools.html">All Tools</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </div>
+      <div class="footer-col">
+        <h4>Popular</h4>
+        <a href="tools/age-calculator.html">Age Calculator</a>
+        <a href="tools/emi-calculator.html">EMI Calculator</a>
+        <a href="tools/qr-generator.html">QR Generator</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DailyTools Hub. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/tools.js"></script>
+<script src="js/main.js"></script>
+<script>
+  function renderAllToolsPage() {
+    const params = new URLSearchParams(window.location.search);
+    const activeCat = params.get("category") || "All";
+
+    const filtersEl = document.getElementById("category-filters");
+    const cats = ["All", ...CATEGORIES.map((c) => c.name)];
+    filtersEl.innerHTML = cats
+      .map((c) => {
+        const href = c === "All" ? "all-tools.html" : `all-tools.html?category=${encodeURIComponent(c)}`;
+        const activeStyle = c === activeCat ? "border-color:var(--accent);color:var(--accent)" : "";
+        return `<a class="quick-chip" style="${activeStyle}" href="${href}">${c}</a>`;
+      })
+      .join("");
+
+    const gridEl = document.getElementById("all-tools-grid");
+    const list = activeCat === "All" ? TOOLS : TOOLS.filter((t) => t.category === activeCat);
+    document.getElementById("page-title").textContent = activeCat === "All" ? "All Tools" : activeCat;
+    document.getElementById("page-sub").textContent =
+      activeCat === "All" ? "Every free tool on DailyTools Hub, in one place." : `${list.length} tool${list.length === 1 ? "" : "s"} in ${activeCat}.`;
+
+    gridEl.innerHTML = list.length
+      ? list.map(buildToolCard).join("")
+      : `<div class="empty-state">No tools in this category yet. Check back soon!</div>`;
+  }
+  document.addEventListener("DOMContentLoaded", renderAllToolsPage);
+</script>
+</body>
+</html>

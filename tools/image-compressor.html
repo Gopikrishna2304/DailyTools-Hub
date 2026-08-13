@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Image Compressor – Compress JPG, PNG & WebP Online | DailyTools Hub</title>
+<meta name="description" content="Compress JPG, PNG and WebP images in your browser — reduce file size while keeping good quality. Free, private, no upload to any server." />
+<link rel="canonical" href="https://dailytoolshub.com/tools/image-compressor.html" />
+<link rel="icon" href="../favicon.ico" />
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../all-tools.html#categories">Categories</a><a href="../about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="icon-btn hamburger" id="hamburger-btn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+  <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+</nav>
+
+<main>
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="../all-tools.html">All Tools</a> / Image Compressor</p>
+    <div class="tool-header">
+      <h1>Image Compressor</h1>
+      <p class="desc">Shrink JPG, PNG and WebP images right in your browser — nothing is uploaded to any server.</p>
+    </div>
+
+    <div class="tool-layout" style="max-width:820px">
+      <div class="panel">
+        <h2>Upload an image</h2>
+        <div class="field">
+          <label for="file-input">Choose an image (JPG, PNG or WebP, up to 10 MB)</label>
+          <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp" />
+          <div class="error-msg">Please choose a JPG, PNG or WebP image under 10 MB.</div>
+        </div>
+        <div class="field">
+          <label for="quality">Compression quality: <span id="quality-display">70</span>%</label>
+          <input type="range" id="quality" min="10" max="95" value="70" style="width:100%;accent-color:var(--accent)" />
+          <p class="hint">Lower quality = smaller file size. 60-80% usually gives a good balance.</p>
+        </div>
+        <p class="hint">🔒 Processing happens entirely on your device — your image never leaves your browser.</p>
+      </div>
+
+      <div class="panel result-panel" id="result-panel">
+        <h2>Result</h2>
+        <div class="result-grid" style="margin-bottom:16px">
+          <div class="result-stat"><div class="value" id="res-original-size">—</div><div class="label">Original Size</div></div>
+          <div class="result-stat"><div class="value" id="res-compressed-size">—</div><div class="label">Compressed Size</div></div>
+          <div class="result-stat"><div class="value" id="res-savings">—</div><div class="label">Reduced By</div></div>
+        </div>
+        <img id="preview-img" style="max-width:100%;border-radius:var(--radius-md);border:1px solid var(--border);display:block;margin:0 auto 16px" />
+        <div class="action-row" style="justify-content:center">
+          <button class="btn btn-primary" id="download-btn">⬇ Download Compressed Image</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>What is this tool?</h2>
+      <p>The Image Compressor reduces the file size of JPG, PNG and WebP images by re-encoding them at your chosen quality level, right inside your browser using the Canvas API — no server upload required.</p>
+      <h2>How to use it</h2>
+      <ol>
+        <li>Choose an image file to compress.</li>
+        <li>Adjust the compression quality slider to balance size vs. quality.</li>
+        <li>Preview the result and click "Download Compressed Image" to save it.</li>
+      </ol>
+      <h2>Example</h2>
+      <p>A 4 MB JPG photo compressed at 70% quality typically shrinks to under 1 MB, with minimal visible quality loss for web use.</p>
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item open">
+        <div class="faq-q">Does my image get uploaded to a server? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">No. Compression happens entirely in your browser using the Canvas API. Your image file never leaves your device.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Why doesn't PNG shrink as much as JPG? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">PNG is a lossless format, so the quality slider has less effect on it compared to JPG or WebP, which support adjustable lossy compression.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is there a file size limit? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">This tool works best with images up to 10 MB, since processing happens in your browser's memory.</div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>You May Also Need</h2>
+      <div class="related-grid" id="related-tools-grid"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+        <p class="desc">Simple tools for everyday life. Free, fast, and privacy-friendly — no account needed.</p>
+      </div>
+      <div class="footer-col"><h4>Explore</h4><a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Legal</h4><a href="../privacy-policy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a><a href="../disclaimer.html">Disclaimer</a></div>
+      <div class="footer-col"><h4>Popular</h4><a href="qr-generator.html">QR Generator</a><a href="password-generator.html">Password Generator</a><a href="word-counter.html">Word Counter</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 DailyTools Hub. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script>window.DTH_TOOL_ID = "image-compressor";</script>
+<script src="../js/tools.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderRelatedTools(["qr-generator", "password-generator", "word-counter"]);
+
+    const fileInput = document.getElementById("file-input");
+    const qualityEl = document.getElementById("quality");
+    const qualityDisplay = document.getElementById("quality-display");
+    const resultPanel = document.getElementById("result-panel");
+    const previewImg = document.getElementById("preview-img");
+    let compressedBlob = null;
+    let originalFile = null;
+
+    qualityEl.addEventListener("input", () => {
+      qualityDisplay.textContent = qualityEl.value;
+      if (originalFile) compressImage(originalFile);
+    });
+
+    fileInput.addEventListener("change", () => {
+      const file = fileInput.files[0];
+      const field = fileInput.closest(".field");
+      if (!file) return;
+      const validTypes = ["image/jpeg", "image/png", "image/webp"];
+      if (!validTypes.includes(file.type) || file.size > 10 * 1024 * 1024) {
+        field.classList.add("has-error");
+        resultPanel.classList.remove("show");
+        return;
+      }
+      field.classList.remove("has-error");
+      originalFile = file;
+      compressImage(file);
+    });
+
+    function compressImage(file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement("canvas");
+          canvas.width = img.width;
+          canvas.height = img.height;
+          const ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0);
+
+          const outputType = file.type === "image/png" ? "image/png" : file.type === "image/webp" ? "image/webp" : "image/jpeg";
+          const quality = parseInt(qualityEl.value, 10) / 100;
+
+          canvas.toBlob(
+            (blob) => {
+              if (!blob) return;
+              compressedBlob = blob;
+              const url = URL.createObjectURL(blob);
+              previewImg.src = url;
+
+              document.getElementById("res-original-size").textContent = formatBytes(file.size);
+              document.getElementById("res-compressed-size").textContent = formatBytes(blob.size);
+              const savings = file.size > 0 ? Math.max(0, Math.round((1 - blob.size / file.size) * 100)) : 0;
+              document.getElementById("res-savings").textContent = savings + "%";
+
+              resultPanel.classList.add("show", "fade-in");
+            },
+            outputType,
+            outputType === "image/png" ? undefined : quality
+          );
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function formatBytes(bytes) {
+      if (bytes < 1024) return bytes + " B";
+      if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + " KB";
+      return (bytes / (1024 * 1024)).toFixed(2) + " MB";
+    }
+
+    document.getElementById("download-btn").addEventListener("click", () => {
+      if (!compressedBlob) {
+        showToast("Compress an image first.");
+        return;
+      }
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(compressedBlob);
+      a.download = "compressed-" + (originalFile ? originalFile.name.replace(/\.[^.]+$/, "") : "image") + ".jpg";
+      a.click();
+    });
+  });
+</script>
+</body>
+</html>

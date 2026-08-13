@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Discount Calculator – Find Sale Price & Savings | DailyTools Hub</title>
+<meta name="description" content="Calculate the final sale price and amount saved on any discount instantly with our free discount calculator." />
+<link rel="canonical" href="https://dailytoolshub.com/tools/discount-calculator.html" />
+<link rel="icon" href="../favicon.ico" />
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../all-tools.html#categories">Categories</a><a href="../about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="icon-btn hamburger" id="hamburger-btn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+  <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+</nav>
+
+<main>
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="../all-tools.html">All Tools</a> / Discount Calculator</p>
+    <div class="tool-header">
+      <h1>Discount Calculator</h1>
+      <p class="desc">Find out exactly how much you'll pay — and how much you save — on any sale.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="panel">
+        <h2>Enter details</h2>
+        <div class="field-row">
+          <div class="field">
+            <label for="price">Original price (₹)</label>
+            <input type="number" id="price" placeholder="e.g. 2000" min="0" />
+            <div class="error-msg">Please enter a valid price.</div>
+          </div>
+          <div class="field">
+            <label for="discount">Discount (%)</label>
+            <input type="number" id="discount" placeholder="e.g. 25" min="0" max="100" />
+            <div class="error-msg">Enter a discount between 0 and 100.</div>
+          </div>
+        </div>
+        <div class="action-row">
+          <button class="btn btn-primary" id="calc-btn">Calculate</button>
+          <button class="btn btn-secondary" id="reset-btn">Reset</button>
+        </div>
+      </div>
+
+      <div class="panel result-panel" id="result-panel">
+        <h2>Result</h2>
+        <div class="result-hero">
+          <div class="value" id="res-final">—</div>
+          <div class="label">You Pay</div>
+        </div>
+        <div class="result-grid">
+          <div class="result-stat"><div class="value" id="res-saved">—</div><div class="label">You Save</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>What is this tool?</h2>
+      <p>The Discount Calculator quickly works out the final price and total savings when a percentage discount is applied to an item's original price — handy for shopping, sales, and comparing deals.</p>
+      <h2>How to use it</h2>
+      <ol>
+        <li>Enter the original price of the item.</li>
+        <li>Enter the discount percentage being offered.</li>
+        <li>Click "Calculate" to see the final price and how much you save.</li>
+      </ol>
+      <h2>Example</h2>
+      <p>An item priced at ₹2,000 with a 25% discount costs ₹1,500 after the discount, saving you ₹500.</p>
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item open">
+        <div class="faq-q">How is the discount amount calculated? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Discount amount = Original price × (Discount % ÷ 100). The final price is the original price minus the discount amount.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Does this include tax? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">No — this calculates the discount only. Use the GST Calculator afterward if you need to add tax to the discounted price.</div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>You May Also Need</h2>
+      <div class="related-grid" id="related-tools-grid"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+        <p class="desc">Simple tools for everyday life. Free, fast, and privacy-friendly — no account needed.</p>
+      </div>
+      <div class="footer-col"><h4>Explore</h4><a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Legal</h4><a href="../privacy-policy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a><a href="../disclaimer.html">Disclaimer</a></div>
+      <div class="footer-col"><h4>Popular</h4><a href="gst-calculator.html">GST Calculator</a><a href="percentage-calculator.html">Percentage Calculator</a><a href="emi-calculator.html">EMI Calculator</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 DailyTools Hub. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script>window.DTH_TOOL_ID = "discount-calculator";</script>
+<script src="../js/tools.js"></script>
+<script src="../js/calculators.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderRelatedTools(["gst-calculator", "percentage-calculator", "salary-calculator"]);
+
+    const priceEl = document.getElementById("price");
+    const discountEl = document.getElementById("discount");
+    const resultPanel = document.getElementById("result-panel");
+
+    document.getElementById("calc-btn").addEventListener("click", () => {
+      const price = parseFloat(priceEl.value);
+      const discount = parseFloat(discountEl.value);
+      const priceField = priceEl.closest(".field");
+      const discountField = discountEl.closest(".field");
+      priceField.classList.toggle("has-error", isNaN(price) || price < 0);
+      discountField.classList.toggle("has-error", isNaN(discount) || discount < 0 || discount > 100);
+      if (isNaN(price) || price < 0 || isNaN(discount) || discount < 0 || discount > 100) return;
+
+      const result = calcDiscount(price, discount);
+      document.getElementById("res-final").textContent = formatCurrency(result.finalPrice);
+      document.getElementById("res-saved").textContent = formatCurrency(result.saved);
+      resultPanel.classList.add("show", "fade-in");
+    });
+
+    document.getElementById("reset-btn").addEventListener("click", () => {
+      priceEl.value = "";
+      discountEl.value = "";
+      priceEl.closest(".field").classList.remove("has-error");
+      discountEl.closest(".field").classList.remove("has-error");
+      resultPanel.classList.remove("show");
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Temperature Converter – Celsius, Fahrenheit, Kelvin | DailyTools Hub</title>
+<meta name="description" content="Instantly convert temperatures between Celsius, Fahrenheit and Kelvin with our free online temperature converter." />
+<link rel="canonical" href="https://dailytoolshub.com/tools/temperature-converter.html" />
+<link rel="icon" href="../favicon.ico" />
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../all-tools.html#categories">Categories</a><a href="../about.html">About</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button class="icon-btn hamburger" id="hamburger-btn" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+  <a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a>
+</nav>
+
+<main>
+  <div class="container">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="../all-tools.html">All Tools</a> / Temperature Converter</p>
+    <div class="tool-header">
+      <h1>Temperature Converter</h1>
+      <p class="desc">Convert between Celsius, Fahrenheit and Kelvin instantly.</p>
+    </div>
+
+    <div class="tool-layout">
+      <div class="panel">
+        <h2>Enter a temperature</h2>
+        <div class="field-row">
+          <div class="field">
+            <label for="from-value">Value</label>
+            <input type="number" id="from-value" placeholder="e.g. 37" value="0" />
+          </div>
+          <div class="field">
+            <label for="from-unit">From</label>
+            <select id="from-unit">
+              <option value="celsius">Celsius (°C)</option>
+              <option value="fahrenheit">Fahrenheit (°F)</option>
+              <option value="kelvin">Kelvin (K)</option>
+            </select>
+          </div>
+        </div>
+        <div class="result-grid" id="result-grid" style="margin-top:20px"></div>
+      </div>
+
+      <div class="panel">
+        <h2>Reference points</h2>
+        <div class="result-grid">
+          <div class="result-stat"><div class="value">0°C</div><div class="label">Water Freezes (32°F)</div></div>
+          <div class="result-stat"><div class="value">37°C</div><div class="label">Body Temp (98.6°F)</div></div>
+          <div class="result-stat"><div class="value">100°C</div><div class="label">Water Boils (212°F)</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>What is this tool?</h2>
+      <p>This tool converts a temperature value between the three most common scales — Celsius, Fahrenheit, and Kelvin — showing all three at once as you type.</p>
+      <h2>How to use it</h2>
+      <ol>
+        <li>Enter a temperature value.</li>
+        <li>Select the scale you're converting from.</li>
+        <li>See the equivalent value in the other two scales instantly.</li>
+      </ol>
+      <h2>Example</h2>
+      <p>37°C (normal human body temperature) equals 98.6°F and 310.15 K.</p>
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item open">
+        <div class="faq-q">What's the formula to convert Celsius to Fahrenheit? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">°F = (°C × 9/5) + 32. To convert back, °C = (°F − 32) × 5/9.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What is Kelvin used for? <span class="faq-toggle">+</span></div>
+        <div class="faq-a">Kelvin is the SI base unit for temperature, commonly used in scientific contexts. 0 K ("absolute zero") equals −273.15°C.</div>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <h2>You May Also Need</h2>
+      <div class="related-grid" id="related-tools-grid"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="brand"><span class="brand-mark">🧰</span>DailyTools Hub</a>
+        <p class="desc">Simple tools for everyday life. Free, fast, and privacy-friendly — no account needed.</p>
+      </div>
+      <div class="footer-col"><h4>Explore</h4><a href="../index.html">Home</a><a href="../all-tools.html">All Tools</a><a href="../about.html">About</a><a href="../contact.html">Contact</a></div>
+      <div class="footer-col"><h4>Legal</h4><a href="../privacy-policy.html">Privacy Policy</a><a href="../terms.html">Terms of Service</a><a href="../disclaimer.html">Disclaimer</a></div>
+      <div class="footer-col"><h4>Popular</h4><a href="unit-converter.html">Unit Converter</a><a href="percentage-calculator.html">Percentage Calculator</a><a href="qr-generator.html">QR Generator</a></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 DailyTools Hub. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script>window.DTH_TOOL_ID = "temperature-converter";</script>
+<script src="../js/tools.js"></script>
+<script src="../js/converters.js"></script>
+<script src="../js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    renderRelatedTools(["unit-converter", "percentage-calculator", "days-calculator"]);
+
+    const fromValueEl = document.getElementById("from-value");
+    const fromUnitEl = document.getElementById("from-unit");
+    const grid = document.getElementById("result-grid");
+
+    const scales = [
+      { key: "celsius", label: "Celsius", suffix: "°C" },
+      { key: "fahrenheit", label: "Fahrenheit", suffix: "°F" },
+      { key: "kelvin", label: "Kelvin", suffix: "K" },
+    ];
+
+    function convert() {
+      const value = parseFloat(fromValueEl.value);
+      if (isNaN(value)) {
+        grid.innerHTML = "";
+        return;
+      }
+      grid.innerHTML = scales
+        .map((s) => {
+          const result = convertTemperature(fromUnitEl.value, s.key, value);
+          const display = Math.round(result * 100) / 100;
+          const highlight = s.key === fromUnitEl.value;
+          return `<div class="result-stat" style="${highlight ? "outline:2px solid var(--accent)" : ""}">
+            <div class="value">${display}${s.suffix}</div>
+            <div class="label">${s.label}</div>
+          </div>`;
+        })
+        .join("");
+    }
+
+    fromValueEl.addEventListener("input", convert);
+    fromUnitEl.addEventListener("change", convert);
+    convert();
+  });
+</script>
+</body>
+</html>
